@@ -35,15 +35,15 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.green
         ),
         themeMode: ThemeMode.dark,
-        // home: StreamBuilder(
-        //   stream: FirebaseAuth.instance.authStateChanges(),
-        //   builder: (ctx,snapshot){
-        //     if(snapshot.hasData){
-        //       return const HomePage();
-        //     }
-        //     return const LoginScreen();
-        //   })
-        home: const LoginScreen()
+        home: StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (ctx,snapshot){
+            if(snapshot.hasData){
+              return const HomePage();
+            }
+            return const LoginScreen();
+          })
+       
       ),
     );
   }
